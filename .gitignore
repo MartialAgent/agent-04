@@ -1,0 +1,16 @@
+# API 키 등 비밀 정보 — 절대 깃허브에 올리면 안 됨!
+.env
+
+# 파이썬
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE 설정
+.idea/
+.vscode/
+
+# OS
+Thumbs.db
+.DS_Store
