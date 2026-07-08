@@ -2,7 +2,7 @@
 
 ## 이 단계는 코딩 없음! 실행만 해보세요 🏃
 
-[`teacher_agent.py`](teacher_agent.py)는 훈이 미리 만들어둔 **교사 업무 도우미 에이전트**입니다.
+[`teacher_agent.py`](teacher_agent.py)는 Martial Agent가 미리 만들어둔 **교사 업무 도우미 에이전트**입니다.
 3단계의 `basic_graph.py`와 같은 랭그래프인데, 노드가 몇 개 더 많을 뿐입니다.
 
 ## 무엇을 하나요?
@@ -41,4 +41,4 @@ python 04-teacher/teacher_agent.py
 - 내 업무 중에 이런 식으로 자동화하고 싶은 건 뭐가 있을까?
 - 노드를 하나 더 추가한다면? (예: 학부모 답장 문구, 시험 문항 초안, 공문 요약...)
 
-→ 이 질문이 바로 **훈의 과제**([`HOMEWORK.md`](../HOMEWORK.md))와 이어집니다.
+→ 이 질문이 바로 **Martial Agent의 과제**([`HOMEWORK.md`](../HOMEWORK.md))와 이어집니다.

@@ -1,7 +1,7 @@
 # 🤖 에이전트 옥 — 기초 컴퓨터 교육
 
 > 요원 옥을 위한 원데이(또는 며칠짜리) 코딩 부트캠프 리포입니다.
-> 강사: 훈 / 수강생: 옥
+> 강사: Martial Agent / 수강생: 옥
 
 ---
 
@@ -14,7 +14,7 @@
 | 3 | **웹개발 바이브코딩** | [`02-web/`](02-web/02-web.md) | 프론트엔드/백엔드 개념 이해 → 픽셀아트 그리기 사이트 만들고 띄워보기 |
 | 4 | **에이전트 바이브코딩** | [`03-agent/`](03-agent/03-agent.md) | 랭그래프(LangGraph) 기본 구조 이해 → Gemini API로 간단한 기능 직접 구현 |
 | 5 | **교사 업무 에이전트** | [`04-teacher/`](04-teacher/04-teacher.md) | 미리 만들어둔 교사 업무 도우미 에이전트 돌려보기 |
-| 6 | **과제** | [`HOMEWORK.md`](HOMEWORK.md) | 옥: 가장 짧은 트랜스포머 / 훈: 학교 업무 에이전트 조사 |
+| 6 | **과제** | [`HOMEWORK.md`](HOMEWORK.md) | 옥: 가장 짧은 트랜스포머 / Martial Agent: 학교 업무 에이전트 조사 |
 
 ---
 
@@ -33,7 +33,7 @@
 - [ ] [Python 3.10+](https://www.python.org/downloads/) 설치 (설치 시 "Add to PATH" 체크!)
 - [ ] [Git](https://git-scm.com/downloads) 설치
 - [ ] [GitHub](https://github.com/) 계정 가입
-- [ ] Gemini API 키 (수업 시간에 훈이 새로 만들어서 전달 → 수업 끝나면 폐기)
+- [ ] Gemini API 키 (수업 시간에 Martial Agent가 새로 만들어서 전달 → 수업 끝나면 폐기)
 
 ---
 
