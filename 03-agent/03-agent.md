@@ -108,4 +108,4 @@ AI의 답이 출력되면 성공!
 - [ ] 바이브코딩으로 나만의 에이전트를 하나 만들었다
 - [ ] API 키를 왜 `.env`에 넣는지 설명할 수 있다
 
-다음 → [`04-teacher/README.md`](../04-teacher/README.md)
+다음 → [`04-teacher/04-teacher.md`](../04-teacher/04-teacher.md)

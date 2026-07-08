@@ -86,4 +86,4 @@ AI(클로드, ChatGPT, 커서 등)에게 이렇게 요청해서 기능을 추가
 - [ ] 픽셀아트를 그려서 PNG 파일로 저장했다
 - [ ] AI에게 요청해서 기능을 하나 이상 추가했다
 
-다음 → [`03-agent/README.md`](../03-agent/README.md)
+다음 → [`03-agent/03-agent.md`](../03-agent/03-agent.md)
