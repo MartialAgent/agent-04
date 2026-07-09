@@ -21,7 +21,17 @@
 
 ---
 
-## 2. VS Code에 깃허브 연동하기
+## 2. VS Code 처음 설치하기
+
+1. [code.visualstudio.com](https://code.visualstudio.com/download) 접속 → **Windows** 버전 다운로드
+2. 다운로드된 설치 파일 실행 → 약관 동의 → 계속 **다음(Next)** → **설치(Install)**
+   - 중간에 나오는 옵션은 기본값(전부 체크) 그대로 두고 넘어가도 됩니다.
+3. 설치 완료 후 **Finish**로 VS Code 실행
+4. **Git 설치 확인**: VS Code는 Git이 컴퓨터에 따로 설치되어 있어야 소스 제어 기능이 동작합니다.
+   - [git-scm.com/download/win](https://git-scm.com/download/win)에서 다운로드 → 설치 (옵션은 기본값 그대로 **다음**만 눌러도 됨)
+   - 설치 후 VS Code를 **재시작**
+
+## 3. VS Code에 깃허브 연동하기
 
 1. VS Code 실행
 2. 왼쪽 사이드바에서 **확장(Extensions, 네모 4개 아이콘)** 클릭
@@ -29,14 +39,22 @@
    - (Git 기능 자체는 VS Code에 기본 내장. 이 익스텐션은 깃허브 로그인/PR 기능 추가)
 4. 왼쪽 하단 **계정 아이콘 → Sign in with GitHub** → 브라우저에서 로그인 허용
 
-## 3. 이 리포 클론(끌어오기) 실습 🎯
+### 클로드 코드(Claude Code) 익스텐션 설치
+
+1. 같은 **확장(Extensions)** 탭에서 `Claude Code` 검색 → **Install**
+2. 설치 후 왼쪽 사이드바(또는 `Ctrl + Shift + P` → `Claude Code: Open`)에서 클로드 코드 아이콘 클릭
+3. 처음 실행 시 Anthropic 계정으로 로그인 안내가 뜨면 브라우저에서 로그인 진행
+4. VS Code 안에서 바로 클로드에게 채팅으로 코드 작성/수정을 시킬 수 있습니다.
+   - (터미널에서 `claude` 명령어로 부르는 방법은 아래 5번에서 다룹니다)
+
+## 4. 이 리포 클론(끌어오기) 실습 🎯
 
 1. `Ctrl + Shift + P` → **`Git: Clone`** 입력 → 엔터
 2. Martial Agent가 알려준 리포 주소 붙여넣기: `https://github.com/MartialAgent/agent-ok.git`
 3. 저장할 폴더 선택 → 완료되면 **Open** 클릭
 4. 이 README가 보이면 성공! 🎉
 
-## 4. 주요 명령어 (터미널 버전)
+## 5. 주요 명령어 (터미널 버전)
 
 VS Code에서는 왼쪽 **소스 제어(가지 모양 아이콘)** 로 클릭만으로도 되지만,
 터미널 명령어도 알아두면 좋습니다. (`` Ctrl + ` `` 백틱 키로 터미널 열기)
@@ -61,7 +79,7 @@ git log --oneline        # 커밋 이력 한 줄씩 보기
 
 ---
 
-## 5. cmd / PowerShell에서 클로드(Claude) 부르기
+## 6. cmd / PowerShell에서 클로드(Claude) 부르기
 
 편집기 안에서만 작업할 필요는 없습니다. **명령 프롬프트(cmd)** 나 **PowerShell** 같은
 터미널에서 바로 클로드를 불러 코드를 짜고 깃 작업까지 시킬 수 있습니다.
@@ -108,7 +126,7 @@ claude                                       # 클로드 실행!
 
 ### 깃 명령어도 터미널에서 그대로
 
-위 **4번**의 `git clone`, `git add`, `git commit`, `git push` 명령어를 cmd/PowerShell에서
+위 **5번**의 `git clone`, `git add`, `git commit`, `git push` 명령어를 cmd/PowerShell에서
 똑같이 쓸 수 있습니다. 클로드에게 **"커밋하고 푸시해줘"** 라고 말로 시켜도 됩니다.
 
 > 결론: **편집기든 터미널이든 깃허브는 똑같이 동작한다.** 그리고 터미널에서 클로드를 부르면
@@ -118,7 +136,9 @@ claude                                       # 클로드 실행!
 
 ## ✅ 체크포인트
 
+- [ ] VS Code와 Git을 설치했다
 - [ ] 깃허브 계정으로 VS Code 로그인 완료
+- [ ] Claude Code 익스텐션을 설치했다
 - [ ] 이 리포를 클론해서 내 컴퓨터에서 열었다
 - [ ] 커밋/푸시/풀이 뭔지 한 문장으로 설명할 수 있다
 
