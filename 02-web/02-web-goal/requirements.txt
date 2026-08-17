@@ -1,0 +1,11 @@
+# 2-2단계에 필요한 라이브러리
+#
+# 설치 (리포 맨 위 폴더에서, 가상환경 활성화 후):
+#     pip install -r 02-web/02-web-goal/requirements.txt
+
+fastapi                  # 서버 뼈대
+uvicorn[standard]        # 서버를 실제로 띄우는 실행기
+python-dotenv            # .env 파일에서 API 키 읽기
+
+langgraph                # 에이전트 흐름을 그래프로 그리기
+langchain-google-genai   # Gemini 모델 호출

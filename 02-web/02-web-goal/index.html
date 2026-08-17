@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+  2-2단계 — 2-1단계의 index.html을 그대로 가져온 것입니다.
+  ========================================
+  ★ 화면은 하나도 바뀌지 않았습니다.
+    바뀐 건 script.js 하나뿐입니다 (가짜 응답 → 서버 호출).
+
+    "화면과 두뇌는 분리되어 있다"는 말이 이 사실 그 자체입니다.
+    두뇌를 바꿔 끼워도 화면은 손댈 필요가 없습니다.
+-->
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내 도메인 어시스턴트</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="card">
+
+    <!-- ① 제목 — 각자 자기 도메인으로 바꿔보세요 -->
+    <h1>🤖 내 도메인 어시스턴트</h1>
+    <p class="subtitle">무엇이든 물어보세요.</p>
+
+    <!-- ② 입력창 — 사용자가 글을 쓰는 곳 -->
+    <textarea
+      id="question"
+      rows="4"
+      placeholder="예: B-2041 언제 들어와?"></textarea>
+
+    <!-- ③ 버튼 — 누르면 script.js가 반응합니다 -->
+    <button id="ask-button">물어보기</button>
+
+    <!-- ④ 결과 영역 — 답이 채워질 빈 상자 -->
+    <div id="result" class="result">결과가 여기에 표시됩니다.</div>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
