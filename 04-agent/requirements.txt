@@ -1,5 +1,5 @@
 # 에이전트 실습에 필요한 라이브러리
-# 설치: pip install -r 03-agent/requirements.txt
+# 설치: pip install -r 04-agent/requirements.txt
 langgraph                # 에이전트 순서도(그래프) 만들기
 langchain-google-genai   # Gemini 모델 연결
 python-dotenv            # .env 파일에서 API 키 읽기

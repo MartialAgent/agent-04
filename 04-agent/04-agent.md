@@ -1,4 +1,4 @@
-# 3단계 — 에이전트 바이브코딩: 랭그래프(LangGraph) 입문
+# 4단계 — 에이전트 바이브코딩: 랭그래프(LangGraph) 입문
 
 ## 1. 에이전트가 뭔가요?
 
@@ -69,7 +69,7 @@ AI 회사 서버에 "나 사용 허가 받은 사람이야"라고 보여주는 *
    터미널 맨 앞에 `(.venv)` 표시가 뜨면 성공!
 5. 활성화된 상태에서 라이브러리 설치 (이 프로젝트 전용 공간에만 설치됨):
    ```powershell
-   pip install -r 03-agent/requirements.txt
+   pip install -r 04-agent/requirements.txt
    ```
 
 > ⚠️ **절대 하면 안 되는 것**: API 키를 코드 파일에 직접 쓰고 깃허브에 푸시하기.
@@ -118,7 +118,7 @@ graph.add_edge("action", "think")   # 행동 → 다시 판단 (반복!)
 ### 실행해보기 🎯
 
 ```powershell
-python 03-agent/tool_agent.py
+python 04-agent/tool_agent.py
 ```
 
 실행하면 먼저 **이 에이전트가 어떻게 구성되어 있는지** 안내가 뜨고, 그다음 질문을 입력받습니다.
@@ -255,4 +255,4 @@ while True:
 - [ ] AI가 되물었을 때 `MemorySaver`가 이전 대화를 기억해서 이어준다는 걸 설명할 수 있다
 - [ ] API 키를 왜 `.env`에 넣는지 설명할 수 있다
 
-다음 → [`04-teacher/04-teacher.md`](../04-teacher/04-teacher.md)
+다음 → [`05-handson/05-handson.md`](../05-handson/05-handson.md)

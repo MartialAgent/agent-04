@@ -19,7 +19,7 @@
 AI가 되묻는 경우("어떤 분위기를 원하세요?")에도 이어서 답할 수 있도록,
 MemorySaver로 이전 대화 내용을 기억해뒀다가 다음 질문에 이어 붙인다.
 
-실행: python 03-agent/tool_agent.py
+실행: python 04-agent/tool_agent.py
 """
 
 import sys

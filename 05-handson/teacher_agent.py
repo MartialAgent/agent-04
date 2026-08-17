@@ -9,8 +9,8 @@
                           ├─> [수업 아이디어]
                           └─> [일반 상담]
 
-실행: python 04-teacher/teacher_agent.py
-준비: 리포 맨 위 폴더의 .env 파일 (3단계에서 설정한 그대로)
+실행: python 05-handson/teacher_agent.py
+준비: 리포 맨 위 폴더의 .env 파일 (4단계에서 설정한 그대로)
 """
 
 from typing import TypedDict
