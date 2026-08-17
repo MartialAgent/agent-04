@@ -249,7 +249,7 @@ def pipeline(topic: str) -> dict:
 [review]   1. "첨단 솔루션"의 구체성 부족: 바코드, RFID, ERP 연동을 언급했지만...
 ```
 
-> 💡 [5단계의 `writing-skills.md`](../05-handson/writing-skills.md)가 이 패턴의 실무판입니다.
+> 💡 [5단계의 `writing-skills.md`](../05-myagent/writing-skills.md)가 이 패턴의 실무판입니다.
 > 거기선 파이프라인 7단계에 **사람 승인**이 끼어 있습니다.
 
 ### 3-2. 병렬 — 동시에 돌리기
@@ -280,7 +280,7 @@ for role, ans in parallel_agents("AI 에이전트 도입", ["기술", "비용", 
 ### 3-3. 슈퍼바이저 — 누구에게 맡길지 정하는 노드
 
 요청 종류가 너무 다르면, **먼저 분류하는 노드**를 둡니다.
-[`domain_agent.py`](../05-handson/domain_agent.py)가 이미 이 구조입니다.
+[`domain_agent.py`](../05-myagent/domain_agent.py)가 이미 이 구조입니다.
 
 #### 먼저, 실패한 버전 ⚠️
 
@@ -562,9 +562,9 @@ EVALSET = [
 ## 📌 TODO
 
 - [ ] 이 문서의 코드를 실행 가능한 `.py`로 분리 (`patterns_memory.py` / `patterns_multi.py` / `eval.py`)
-- [ ] 5단계 [`domain_agent.py`](../05-handson/domain_agent.py)에 평가셋 붙이기
+- [ ] 5단계 [`domain_agent.py`](../05-myagent/domain_agent.py)에 평가셋 붙이기
 - [ ] 각자 도메인의 평가셋 10개를 모아 공용 벤치마크 만들기
 
 ---
 
-이전 ← [4-2단계 `02-agent-category.md`](02-agent-category.md) ｜ 다음 → 5단계 [`05-handson/`](../05-handson/05-handson.md)
+이전 ← [4-2단계 `02-agent-category.md`](02-agent-category.md) ｜ 다음 → 5단계 [`05-myagent/`](../05-myagent/05-myagent.md)

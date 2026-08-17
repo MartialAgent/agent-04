@@ -13,7 +13,7 @@
   요약·초안·검토는 영업이든 행정이든 연구든 제조든 전부 필요합니다.
   그래서 이 에이전트는 원우 전원에게 그대로 돌아갑니다.
 
-실행: python 05-handson/domain_agent.py
+실행: python 05-myagent/domain_agent.py
 준비: 리포 맨 위 폴더의 .env 파일 (2-2단계에서 설정한 그대로)
 """
 

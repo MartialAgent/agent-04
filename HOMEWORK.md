@@ -79,7 +79,7 @@ print(scores.shape, weights.shape, output.shape)
 
 ## 🎯 과제 3 — 내 도메인 에이전트 (학기 과제) 🟢🟡🔴
 
-**한 학기 내내 이어지는 메인 과제입니다.** 5단계([`05-handson/`](05-handson/05-handson.md))에서 시작합니다.
+**한 학기 내내 이어지는 메인 과제입니다.** 5단계([`05-myagent/`](05-myagent/05-myagent.md))에서 시작합니다.
 
 각자 **자기 도메인**의 반복 업무 하나를 골라, 그걸 돕는 에이전트를 만들고 키웁니다.
 영업·행정·연구·제조·인사·마케팅 — 무엇이든 좋습니다. **잘 아는 도메인일수록 좋은 과제가 됩니다.**
@@ -94,7 +94,7 @@ print(scores.shape, weights.shape, output.shape)
 
 ### 2단계 — 프로토타입 🟡
 
-- [ ] [`05-handson/domain_agent.py`](05-handson/domain_agent.py)의 **분류 항목과 노드 프롬프트**를 내 업무로 교체
+- [ ] [`05-myagent/domain_agent.py`](05-myagent/domain_agent.py)의 **분류 항목과 노드 프롬프트**를 내 업무로 교체
 - [ ] 실제 예시 입력으로 동작 테스트 (되는 것 / 안 되는 것 기록)
 - [ ] 개인정보·민감정보가 들어가면 마스킹·확인 절차 설계
 

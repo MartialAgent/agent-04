@@ -540,4 +540,4 @@ description: (언제 이 스킬을 부르는지. 트리거 문장까지 포함)
 
 ---
 
-이전 ← [5단계 `05-handson.md`](05-handson.md) ｜ 관련 → [4-3단계 `03-agent-handson.md`](../04-agent/03-agent-handson.md)
+이전 ← [5단계 `05-myagent.md`](05-myagent.md) ｜ 관련 → [4-3단계 `03-agent-handson.md`](../04-agent/03-agent-handson.md)

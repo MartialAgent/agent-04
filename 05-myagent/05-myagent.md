@@ -23,7 +23,7 @@
 
 ```powershell
 # .env 설정과 pip install은 4단계에서 이미 완료
-python 05-handson/domain_agent.py
+python 05-myagent/domain_agent.py
 ```
 
 ### 무엇을 하나요?
