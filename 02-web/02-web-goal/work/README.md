@@ -3,12 +3,15 @@
 **여러분이 만든 결과물이 쌓이는 곳입니다.**
 
 2-1단계와 달리 **빈 폴더에서 시작하지 않습니다.**
-[`../docs/03-steps.md`](../docs/03-steps.md)의 STEP 0에서 2-1단계 결과물을 여기로 복사합니다.
+[`../docs/03-steps.md`](../docs/03-steps.md)의 STEP 0에서 2-1단계의 **화면 세 개**를 여기로 복사합니다.
+
+> ★ 2-1에는 서버가 없었습니다. **파이썬 파일은 전부 이 단계에서 처음 생깁니다.**
+> 2-1의 `data.js`는 가져오지 않습니다 — 그 표는 STEP 1에서 `data.py`로 이사합니다.
 
 | STEP | 생기는 / 바뀌는 파일 |
 |---|---|
-| 0 | `index.html` `style.css` `script.js` `app.py` `requirements.txt` (2-1에서 복사), `CLAUDE.md` |
-| 1 🔧 | `agent.py` `brain.py` `data.py` 신규, `app.py` 수정 |
+| 0 | `index.html` `style.css` `script.js` (2-1에서 복사), `CLAUDE.md` |
+| 1 🔧 | `app.py` `requirements.txt` `agent.py` `brain.py` `data.py` **전부 신규** |
 | 2 🖥 | `script.js` `style.css` 수정 |
 | 3 🔧 | `agent.py` `brain.py` 수정 |
 | 4 🖥 | `script.js` `style.css` 수정 |

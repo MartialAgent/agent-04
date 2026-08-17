@@ -15,15 +15,22 @@ STEP 1 🔧백  →  STEP 2 🖥프론트  →  STEP 3 🔧백
 
 ## STEP 0 — 준비 🟢
 
-### ① 2-1단계 결과물 가져오기
+### ① 2-1단계 결과물 가져오기 — **화면 세 개만**
 
 ```
-02-web/01-web-basic/work/ 의 index.html, style.css, script.js, server.py,
-requirements.txt 를 02-web/02-web-goal/work/ 로 복사해줘.
-server.py 는 app.py 로 이름을 바꿔줘.
+02-web/01-web-basic/work/ 의 index.html, style.css, script.js 를
+02-web/02-web-goal/work/ 로 복사해줘.
+
+data.js 는 가져오지 마. 2-2단계에서는 그 표가 서버(brain.py)로 이사간다.
+그리고 index.html에서 data.js 를 부르던 <script> 줄도 지워줘.
 ```
 
-> 2-1을 못 했거나 결과물이 망가졌으면 `02-web/01-web-basic/example/` 에서 복사해도 됩니다.
+> ★ **2-1에는 서버가 없었습니다.** `server.py`도 `requirements.txt`도 없는 게 정상입니다.
+> 서버는 이 단계 STEP 1에서 **처음으로** 만듭니다.
+>
+> 2-1을 못 했거나 결과물이 망가졌으면 `02-web/02-web-goal/example/` 의
+> `index.html` · `style.css` · `script.js` 를 가져다 써도 됩니다. 부끄러운 일이 아닙니다.
+> (다만 그건 STEP 6까지 다 끝난 화면이라, 뭐가 늘어나는지를 못 보게 됩니다)
 
 ### ② 문서 읽히기
 
@@ -41,16 +48,13 @@ server.py 는 app.py 로 이름을 바꿔줘.
 
 ### ③ 지금 상태 확인
 
-```powershell
-# 리포 맨 위 폴더에서
-.venv\Scripts\Activate.ps1
-pip install -r 02-web/02-web-goal/work/requirements.txt
-uvicorn app:app --reload --app-dir 02-web/02-web-goal/work
-```
+`work/index.html` 을 **더블클릭**해서 여세요. 아직 서버가 없으니 2-1과 같은 방식입니다.
 
-- [ ] http://localhost:8000 에서 **2-1단계와 똑같이** 동작한다
+- [ ] 채팅창 화면이 **2-1단계와 똑같이** 뜬다
+- [ ] 메시지를 보내면 내 말풍선은 붙는데 **답이 오지 않는다** ← 정상입니다
+      (`data.js`를 두고 왔으니 답할 내용물이 없습니다)
 
-여기서 출발합니다.
+**여기서 출발합니다.** STEP 1에서 서버를 만들고, 그 답할 내용물이 서버 안으로 들어갑니다.
 
 ---
 

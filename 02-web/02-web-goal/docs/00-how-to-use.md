@@ -83,17 +83,21 @@ example/  ← 정답지 (막혔을 때만 편다)
 
 ## 4. 시작 절차
 
-### ① 2-1단계 결과물 가져오기
+### ① 2-1단계 결과물 가져오기 — **화면 세 개만**
 
 ```
-02-web/01-web-basic/work/ 의 index.html, style.css, script.js, server.py,
-requirements.txt 를 02-web/02-web-goal/work/ 로 복사해줘.
+02-web/01-web-basic/work/ 의 index.html, style.css, script.js 를
+02-web/02-web-goal/work/ 로 복사해줘.
 
-server.py는 app.py 로 이름을 바꿔줘. (2-2단계에서는 서버가 에이전트를 부르니까)
+data.js 는 가져오지 마. 2-2단계에서는 그 표가 서버로 이사간다.
+index.html에서 data.js 를 부르던 <script> 줄도 지워줘.
 ```
 
+> ★ **2-1에는 서버가 없었습니다.** 가져올 파이썬 파일이 없는 게 정상입니다.
+> **서버는 이 단계에서 처음 만듭니다.** 그게 2-1과 2-2를 나눈 이유입니다.
+>
 > 2-1단계를 못 했거나 결과물이 망가졌으면
-> `02-web/01-web-basic/example/` 에서 복사해도 됩니다. 부끄러운 일이 아닙니다.
+> `02-web/02-web-goal/example/` 의 화면 파일 셋을 가져다 써도 됩니다. 부끄러운 일이 아닙니다.
 
 ### ② 문서 읽히기
 
