@@ -1,0 +1,10 @@
+# 2-1단계에 필요한 라이브러리 — 딱 두 개입니다.
+#
+# 설치 (리포 맨 위 폴더에서, 가상환경 활성화 후):
+#     pip install -r 02-web/01-web-basic/example/requirements.txt
+#
+# ★ API 키, 계정, 외부 서비스가 하나도 없습니다.
+#   2-1단계는 인터넷 없이도 끝까지 돌아갑니다.
+
+fastapi                  # 서버 뼈대
+uvicorn[standard]        # 서버를 실제로 띄우는 실행기

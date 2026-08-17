@@ -289,15 +289,21 @@ AutoGen·MetaGPT는 시기 문제 이전에 **자체 프레임워크가 곧 논�
 
 ### 준비
 
-5·6절 코드는 **2-2단계에서 이미 만든 환경 그대로** 돌아갑니다. 추가 설치가 없습니다.
+5·6절 코드는 2-2단계 환경에 **진짜 모델을 부르는 라이브러리 두 개**를 더하면 됩니다.
+(2단계는 두뇌를 더미로 두어 키가 필요 없었습니다. **여기서부터 진짜 모델을 씁니다.**)
 
 ```powershell
 # 이미 했다면 건너뛰세요
 .venv\Scripts\Activate.ps1
-pip install -r 02-web/02-web-goal/requirements.txt
+pip install -r 02-web/02-web-goal/example/requirements.txt
+pip install langchain-google-genai python-dotenv
 ```
 
-`.env`에 `GOOGLE_API_KEY`가 있어야 합니다.
+그리고 `.env.example`을 복사해 `.env`를 만들고 `GOOGLE_API_KEY`를 넣으세요.
+
+> 🎯 **여기가 2단계의 `brain.py`를 진짜로 갈아끼우는 지점입니다.**
+> 2-2단계에서는 `brain.decide()`가 규칙으로 판단했습니다.
+> 그 자리를 모델 호출로 바꾸면 나머지 구조(노드·엣지·상태)는 그대로 돌아갑니다.
 
 ---
 
@@ -506,8 +512,12 @@ START ─▶ think ──(도구 호출 없음)──▶ END
 
 ### 6-5. 이미 본 적 있습니다
 
-[2-2단계의 `agent.py`](../02-web/02-web-goal/agent.py)가 **정확히 이 구조**입니다.
-거기선 도구가 `lookup` 하나였고, 여기선 `calculator`+`search` 둘일 뿐입니다.
+[2-2단계의 `agent.py`](../02-web/02-web-goal/example/agent.py)가 **정확히 이 구조**입니다.
+거기선 도구가 `lookup`·`list_codes` 둘이었고, 여기선 `calculator`+`search`일 뿐입니다.
+
+> 차이는 **판단하는 자리**뿐입니다.
+> 2-2단계는 `brain.py`의 규칙이 판단했고, 여기서는 **진짜 모델**이 판단합니다.
+> 그래프 조립 코드는 사실상 같습니다.
 
 > ⚠️ **`create_react_agent`로 한 줄 축약하는 건 지금 하지 마세요.**
 > 위 그래프 조립 전체가 한 줄로 대체되지만, 그러면 배울 게 사라집니다.

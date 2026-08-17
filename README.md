@@ -33,7 +33,7 @@
 |---|---|---|---|
 | — | **순서 설명** | 이 문서 | 뭘 배우는지 큰 그림 잡기 |
 | 1 | **깃허브 연동** | [`01-github/`](01-github/01-github.md) | VS Code에 깃허브 붙이고, 이 리포를 내 컴퓨터로 가져오기 (+ 터미널에서 클로드 부르기) |
-| 2 | **웹개발** | [`02-web/`](02-web/02-web.md) | 도구 지도 → HTML/CSS/JS로 화면 만들기 → 서버·에이전트 붙여 "에이전트 껍데기" 완성 |
+| 2 | **웹개발** | [`02-web/`](02-web/02-web.md) | 도구 지도 → PRD·SPEC 문서를 클로드에게 시켜 **채팅창** 만들기(HTML→CSS→JS→서버) → 그 뒤에 **에이전트** 붙여 껍데기 완성. **API 키 없이 진행** |
 | 3 | **나노GPT** | [`03-nanogpt/`](03-nanogpt/README.md) | 트랜스포머(GPT)를 직접 학습·추론시켜보며 구조 이해 ([학습자료](03-nanogpt/docs/study/00_overview.md)) |
 | 4 | **에이전트: 논문에서 코드까지** | [`04-agent/`](04-agent/01-agent-basic.md) | **4-1** 논문 계보 → 프레임워크 없이 → `StateGraph`로 직접 구현<br>**4-2** [개발 방식 분류](04-agent/02-agent-category.md) — 4축(오케스트레이션·호스팅·지식·검증)으로 내 자리 찍기<br>**4-3** [구현 방식들](04-agent/03-agent-handson.md) — 메모리 · 멀티에이전트 · 평가 |
 | 5 | **내 도메인 에이전트 실습** | [`05-handson/`](05-handson/05-handson.md) | 완성본을 돌려보고, **내 도메인으로 바꿔 학기 내내 키우기** |
@@ -66,7 +66,8 @@
 - [ ] [Python 3.10+](https://www.python.org/downloads/) 설치 (설치 시 **"Add to PATH" 체크!**)
 - [ ] [Git](https://git-scm.com/downloads) 설치
 - [ ] [GitHub](https://github.com/) 계정 가입
-- [ ] Gemini API 키 (수업 시간에 Martial Agent가 새로 만들어 전달 → 수업 후 폐기)
+- [ ] Gemini API 키 — **3단계부터 필요합니다.** (수업 시간에 Martial Agent가 새로 만들어 전달 → 수업 후 폐기)
+      1~2단계는 키 없이 끝까지 진행됩니다.
 
 > 설치가 막히면 그 자리에서 물어보세요. **준비물에서 막히는 건 실력과 아무 상관이 없습니다.**
 

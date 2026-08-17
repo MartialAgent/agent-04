@@ -17,10 +17,12 @@
 ## 1. 먼저 실행만 🟢
 
 [`domain_agent.py`](domain_agent.py)는 미리 만들어둔 **업무 도우미 에이전트**입니다.
-2-2단계의 [`agent.py`](../02-web/02-web-goal/agent.py)와 같은 랭그래프인데, 노드가 몇 개 더 많을 뿐입니다.
+2-2단계의 [`agent.py`](../02-web/02-web-goal/example/agent.py)와 같은 랭그래프인데,
+노드가 몇 개 더 많고 **판단을 진짜 모델이 한다**는 점만 다릅니다.
+(2-2단계에서는 `brain.py`의 규칙이 그 자리를 대신했습니다)
 
 ```powershell
-# .env 설정과 pip install은 2-2단계에서 이미 완료
+# .env 설정과 pip install은 4단계에서 이미 완료
 python 05-handson/domain_agent.py
 ```
 
@@ -85,7 +87,7 @@ Gemini는 "조건부 엣지"를 그래프 이론 용어로 해석해서 엉뚱�
 > 이 에이전트에는 **도구가 없습니다.** 아는 것만 말하고, 모르면 지어냅니다.
 > 우리 회사 재고도, 우리 팀 규정도, 내 연구실 논문 목록도 모릅니다.
 >
-> [2-2단계 `agent.py`](../02-web/02-web-goal/agent.py)에는 `lookup` 도구가 있었죠?
+> [2-2단계 `agent.py`](../02-web/02-web-goal/example/agent.py)에는 `lookup` 도구가 있었죠?
 > **그 차이가 실무에서 쓸 수 있느냐 없느냐를 가릅니다.**
 
 ### 실험 ③ 분류 프롬프트 망가뜨리기
@@ -154,7 +156,7 @@ Gemini는 "조건부 엣지"를 그래프 이론 용어로 해석해서 엉뚱�
 
 ### 4-2. 도구 붙이기 (실험 ②의 해결)
 
-[2-2단계 `agent.py`](../02-web/02-web-goal/agent.py)의 `@tool` + `think ↔ act` 구조를
+[2-2단계 `agent.py`](../02-web/02-web-goal/example/agent.py)의 도구 + `think ↔ act` 구조를
 이 그래프의 노드 하나에 얹으면, 그 노드만 **자료를 찾아오는 노드**가 됩니다.
 구조는 [4-1단계 6절](../04-agent/01-agent-basic.md#6-1단계--같은-걸-stategraph로-다시-쓰기)에 있습니다.
 

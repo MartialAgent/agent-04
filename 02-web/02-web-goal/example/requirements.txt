@@ -1,0 +1,13 @@
+# 2-2단계에 필요한 라이브러리 — 세 개입니다.
+#
+# 설치 (리포 맨 위 폴더에서, 가상환경 활성화 후):
+#     pip install -r 02-web/02-web-goal/example/requirements.txt
+#
+# ★ 여전히 API 키가 없습니다.
+#   에이전트의 "두뇌"는 brain.py의 규칙으로 흉내냅니다.
+#   진짜 모델(Gemini)은 3~5단계에서 붙입니다.
+
+fastapi                  # 서버 뼈대
+uvicorn[standard]        # 서버를 실제로 띄우는 실행기
+
+langgraph                # 에이전트 흐름을 그래프(노드·엣지·상태)로 그리기

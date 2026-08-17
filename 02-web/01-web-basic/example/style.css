@@ -1,0 +1,174 @@
+/*
+  2-1단계 완성본 — 채팅창 "꾸미기"
+  ================================================================
+  ★ 이 파일의 진짜 목적은 CSS 속성을 외우는 게 아닙니다.
+
+      "HTML은 한 글자도 안 바뀌었는데 화면이 완전히 달라졌다"
+
+    이걸 눈으로 확인하는 것입니다. (STEP 1 → STEP 2)
+    구조(HTML)와 겉모습(CSS)은 분리되어 있습니다.
+
+  ★ 먼저 바꿔볼 것: 아래 --main-color 값 하나
+      #4f46e5(보라) → #059669(초록) → #dc2626(빨강)
+    저장 → 브라우저 새로고침. 이 루프를 몸에 익히세요.
+*/
+
+/* ── 색깔 한곳 모으기 ──────────────────────────────────────────
+   :root 는 "문서 전체"를 뜻합니다.
+   여기서 정한 이름을 아래에서 var(--이름) 으로 꺼내 씁니다.
+   색을 한 곳에서만 고치면 되도록 모아둔 것입니다. */
+:root {
+  --main-color: #4f46e5;   /* 버튼·내 말풍선 색 */
+  --bg-color: #f3f4f6;     /* 배경 색 */
+  --card-color: #ffffff;   /* 카드 색 */
+  --text-color: #1f2937;   /* 글자 색 */
+  --bot-bubble: #f3f4f6;   /* 상대 말풍선 색 */
+  --line-color: #e5e7eb;   /* 구분선 색 */
+}
+
+/* ── 페이지 전체 ────────────────────────────────────────────── */
+body {
+  margin: 0;
+  padding: 24px 16px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Segoe UI", "맑은 고딕", sans-serif;
+  line-height: 1.6;
+}
+
+/* ── 가운데 흰 카드 = 채팅창 전체 ───────────────────────────── */
+.chat {
+  max-width: 640px;
+  height: calc(100vh - 48px);   /* 화면 높이에서 위아래 여백을 뺀 만큼 */
+  margin: 0 auto;
+  background: var(--card-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+
+  /* ★ 채팅창의 핵심 배치
+     세로로 [머리말][대화][입력창] 세 덩어리를 쌓고,
+     가운데 대화 영역만 남는 공간을 다 차지하게 합니다. */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── ① 머리말 ───────────────────────────────────────────────── */
+.chat-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line-color);
+}
+
+.chat-header h1 {
+  margin: 0 0 2px;
+  font-size: 20px;
+}
+
+.subtitle {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* ── ② 대화 영역 ────────────────────────────────────────────── */
+.messages {
+  flex: 1;                 /* ★ 남는 공간을 전부 차지 */
+  overflow-y: auto;        /* 넘치면 이 안에서만 스크롤 */
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 말풍선 공통 */
+.bubble {
+  max-width: 78%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  white-space: pre-wrap;   /* 줄바꿈(\n)을 화면에도 줄바꿈으로 */
+  word-break: break-word;  /* 긴 단어가 상자를 뚫고 나가지 않게 */
+  font-size: 15px;
+}
+
+/* 내가 쓴 말 — 오른쪽, 색 채움 */
+.bubble.me {
+  align-self: flex-end;
+  background: var(--main-color);
+  color: white;
+  border-bottom-right-radius: 4px;   /* 한 귀퉁이만 각지게 = 말풍선 느낌 */
+}
+
+/* 상대가 한 말 — 왼쪽, 회색 */
+.bubble.bot {
+  align-self: flex-start;
+  background: var(--bot-bubble);
+  color: var(--text-color);
+  border-bottom-left-radius: 4px;
+}
+
+/* 오류 말풍선 */
+.bubble.error {
+  align-self: flex-start;
+  background: #fef2f2;
+  color: #991b1b;
+  border-bottom-left-radius: 4px;
+}
+
+/* "생각 중..." 표시 — 옅게 */
+.bubble.pending {
+  opacity: 0.55;
+}
+
+/* 대화가 하나도 없을 때 안내 */
+.empty {
+  margin: auto;
+  color: #9ca3af;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* ── ③ 입력 영역 ────────────────────────────────────────────── */
+.composer {
+  display: flex;
+  gap: 8px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--line-color);
+  background: var(--card-color);
+}
+
+textarea {
+  flex: 1;
+  box-sizing: border-box;  /* 없으면 padding 때문에 상자를 뚫고 나갑니다 */
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-family: inherit;    /* 위에서 정한 글꼴 그대로 */
+  font-size: 15px;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--main-color);
+}
+
+button {
+  padding: 0 20px;
+  background: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;         /* 마우스를 올리면 손가락 모양 */
+  white-space: nowrap;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}

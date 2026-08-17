@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+  2-2단계 완성본 — 화면의 "뼈대"
+  ================================================================
+  ★ 2-1단계의 index.html에서 무엇이 늘었나
+
+    ① 로그인 화면 <section id="login-view">   ← STEP 6에서 추가
+    ② [새 대화] 버튼                          ← STEP 6에서 추가
+    ③ 나머지는 그대로
+
+  대화 영역 안의 "진행 과정"과 "근거 칩"은 여기 없습니다.
+  서버가 준 데이터를 보고 script.js가 그때그때 만들어 붙입니다.
+
+  ★ 요점: 백엔드에 에이전트가 들어왔지만 HTML은 거의 그대로입니다.
+    화면과 두뇌는 정말로 분리되어 있습니다.
+-->
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내 도메인 어시스턴트</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══ 화면 1. 로그인 (STEP 6에서 추가) ════════════════════ -->
+  <section id="login-view" class="login">
+    <h1>🤖 내 도메인 어시스턴트</h1>
+    <p class="subtitle">이름만 적으면 들어갑니다.</p>
+
+    <form id="login-form" class="login-form">
+      <input id="login-name" type="text" placeholder="이름 (예: 김영업)" autocomplete="off">
+      <button type="submit">시작하기</button>
+    </form>
+
+    <p class="hint">
+      ⚠️ <b>진짜 로그인이 아닙니다.</b> 비밀번호도, 가입도 없습니다.<br>
+      "로그인이 있으면 사람마다 대화방이 나뉜다"는 것만 보여주는 더미입니다.
+    </p>
+  </section>
+
+
+  <!-- ═══ 화면 2. 채팅 ═══════════════════════════════════════ -->
+  <main id="chat-view" class="chat hidden">
+
+    <header class="chat-header">
+      <div>
+        <h1>🤖 내 도메인 어시스턴트</h1>
+        <p class="subtitle" id="who">—</p>
+      </div>
+      <!-- STEP 6에서 추가 — 이 대화방을 비웁니다 -->
+      <button id="new-chat" class="ghost" type="button">새 대화</button>
+    </header>
+
+    <!-- 대화가 쌓이는 곳. script.js가 채웁니다 -->
+    <div id="messages" class="messages"></div>
+
+    <form id="chat-form" class="composer">
+      <textarea
+        id="input"
+        rows="2"
+        placeholder="예) B-2041 언제 들어와?   /   품번 목록 보여줘"></textarea>
+      <button id="send" type="submit">보내기</button>
+    </form>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
