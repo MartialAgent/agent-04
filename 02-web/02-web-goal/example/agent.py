@@ -23,6 +23,7 @@ app.py는 이 파일의 run_agent() 하나만 호출합니다.
     python 02-web/02-web-goal/example/agent.py
 """
 
+import sys
 from operator import add
 from typing import Annotated, TypedDict
 
@@ -30,6 +31,24 @@ from langgraph.graph import END, START, StateGraph
 
 import brain
 from data import INVENTORY
+
+
+# ── 한글 윈도우에서 터미널이 깨지지 않게 ─────────────────────────
+#
+# ⚠️ 이 세 줄이 없으면 한글 윈도우에서 서버가 500 에러를 냅니다.
+#
+#   아래에서 print("🧠 [think] ...") 처럼 이모지를 찍는데,
+#   한글 윈도우의 터미널 기본 인코딩(cp949)은 이모지를 표현하지 못합니다.
+#   그러면 print가 UnicodeEncodeError를 내고, 그게 요청 처리 도중이면
+#   서버가 통째로 500을 돌려줍니다. (답을 못 만들어서가 아니라 "출력하다가" 죽는 것)
+#
+#   그래서 이 파일의 출력만 UTF-8로 바꿔둡니다.
+#   ★ 파이썬을 배포할 때 실제로 자주 만나는 함정이라 교재로 남겨둡니다.
+#
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except (AttributeError, ValueError):
+    pass          # 출력을 바꿀 수 없는 환경이면 그냥 넘어갑니다
 
 
 # ════════════════════════════════════════════════════════════════

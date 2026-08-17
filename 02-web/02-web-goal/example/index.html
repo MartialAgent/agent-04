@@ -1,71 +1,150 @@
 <!DOCTYPE html>
 <!--
-  2-2단계 완성본 — 화면의 "뼈대"
+  2-2단계 완성본 — 에이전트 껍데기 (한 화면)
   ================================================================
-  ★ 2-1단계의 index.html에서 무엇이 늘었나
+  ★ 화면 하나에 네 덩어리가 다 나와 있습니다. 눌러보면서 익히라고 이렇게 폈습니다.
 
-    ① 로그인 화면 <section id="login-view">   ← STEP 6에서 추가
-    ② [새 대화] 버튼                          ← STEP 6에서 추가
-    ③ 나머지는 그대로
+    ① 📦 사내 데이터   data.js의 표 그대로.  품번을 누르면 도구가 바로 돕니다
+    ② 🔧 도구          에이전트가 쥐는 연장.  직접 눌러 실행해볼 수 있습니다
+    ③ 💬 대화          같은 도구를 에이전트가 "알아서" 골라 쓰는 자리
+    ④ 🧠 그래프        방금 에이전트가 어느 노드를 어떤 순서로 밟았는지
 
-  대화 영역 안의 "진행 과정"과 "근거 칩"은 여기 없습니다.
-  서버가 준 데이터를 보고 script.js가 그때그때 만들어 붙입니다.
+  ★ ②와 ③을 비교하는 게 이 화면의 핵심입니다.
 
-  ★ 요점: 백엔드에 에이전트가 들어왔지만 HTML은 거의 그대로입니다.
-    화면과 두뇌는 정말로 분리되어 있습니다.
+      ② 도구를 내가 고른다  → 프로그램
+      ③ 도구를 쟤가 고른다  → 에이전트
+
+    같은 lookup() 함수를, 왼쪽에서는 내가 누르고 오른쪽에서는 에이전트가 부릅니다.
+    그 차이 하나가 "챗봇"과 "에이전트"를 가릅니다.
+
+  ★ 서버가 없습니다. 이 파일을 더블클릭하면 그걸로 끝입니다.
+    설치도, 터미널도, 계정도, 인터넷도 필요 없습니다.
 -->
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>내 도메인 어시스턴트</title>
+  <title>내 도메인 어시스턴트 — 에이전트 껍데기</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ═══ 화면 1. 로그인 (STEP 6에서 추가) ════════════════════ -->
-  <section id="login-view" class="login">
-    <h1>🤖 내 도메인 어시스턴트</h1>
-    <p class="subtitle">이름만 적으면 들어갑니다.</p>
+<div class="app">
 
-    <form id="login-form" class="login-form">
-      <input id="login-name" type="text" placeholder="이름 (예: 김영업)" autocomplete="off">
-      <button type="submit">시작하기</button>
-    </form>
+  <!-- ═══ 머리말 + 로그인 ═══════════════════════════════════════ -->
+  <header class="app-header">
+    <div>
+      <h1>🤖 내 도메인 어시스턴트</h1>
+      <p class="subtitle">데이터 · 도구 · 대화가 한 화면에. <b>전부 더미이고 서버는 없습니다.</b></p>
+    </div>
 
-    <p class="hint">
-      ⚠️ <b>진짜 로그인이 아닙니다.</b> 비밀번호도, 가입도 없습니다.<br>
-      "로그인이 있으면 사람마다 대화방이 나뉜다"는 것만 보여주는 더미입니다.
-    </p>
-  </section>
+    <div class="session">
+      <!-- 로그인 — 이름만 적으면 통과하는 더미입니다.
+           ⚠️ 어디에도 저장하지 않습니다. 새로고침하거나 창을 닫으면 바로 풀립니다. -->
+      <form id="login-form" class="login-form">
+        <input id="login-name" type="text" placeholder="이름 (예: 김영업)" autocomplete="off">
+        <button type="submit">입장</button>
+      </form>
 
-
-  <!-- ═══ 화면 2. 채팅 ═══════════════════════════════════════ -->
-  <main id="chat-view" class="chat hidden">
-
-    <header class="chat-header">
-      <div>
-        <h1>🤖 내 도메인 어시스턴트</h1>
-        <p class="subtitle" id="who">—</p>
+      <div id="who-box" class="who-box hidden">
+        <span id="who" class="who"></span>
+        <button id="new-chat" class="ghost" type="button">새 대화</button>
+        <button id="logout" class="ghost" type="button">나가기</button>
       </div>
-      <!-- STEP 6에서 추가 — 이 대화방을 비웁니다 -->
-      <button id="new-chat" class="ghost" type="button">새 대화</button>
-    </header>
+    </div>
+  </header>
 
-    <!-- 대화가 쌓이는 곳. script.js가 채웁니다 -->
-    <div id="messages" class="messages"></div>
 
-    <form id="chat-form" class="composer">
-      <textarea
-        id="input"
-        rows="2"
-        placeholder="예) B-2041 언제 들어와?   /   품번 목록 보여줘"></textarea>
-      <button id="send" type="submit">보내기</button>
-    </form>
+  <main class="grid">
+
+    <!-- ═══ ① 사내 데이터 ═══════════════════════════════════════ -->
+    <section class="panel">
+      <h2>📦 사내 데이터 <span class="tag fake">더미</span></h2>
+      <p class="panel-hint">
+        <code>data.js</code>에 적어둔 표입니다. 진짜 서비스라면 이 자리가
+        사내 ERP나 데이터베이스입니다. <b>품번을 누르면 조회 도구가 바로 돕니다.</b>
+      </p>
+      <table class="table">
+        <thead>
+          <tr><th>품번</th><th>이름</th><th class="num">재고</th><th>납기</th></tr>
+        </thead>
+        <tbody id="inventory"></tbody>
+      </table>
+    </section>
+
+
+    <!-- ═══ ② 도구 ══════════════════════════════════════════════ -->
+    <section class="panel">
+      <h2>🔧 도구 <span class="tag real">진짜</span></h2>
+      <p class="panel-hint">
+        에이전트가 손에 쥐는 연장입니다. 그냥 함수예요.
+        <b>여기서는 내가 직접 고르지만</b>, 아래 대화에서는 에이전트가 알아서 고릅니다.
+      </p>
+
+      <div class="tool-row">
+        <input id="tool-code" type="text" placeholder="A-1023" autocomplete="off">
+        <button id="run-lookup" type="button">lookup</button>
+        <button id="run-list" class="ghost" type="button">list_codes</button>
+      </div>
+
+      <pre id="tool-result" class="tool-result">도구를 실행하면 결과가 여기 나옵니다.</pre>
+    </section>
+
+
+    <!-- ═══ ④ 그래프 ════════════════════════════════════════════ -->
+    <section class="panel">
+      <h2>🧠 에이전트가 걸어간 길</h2>
+      <p class="panel-hint">
+        대화를 보내면 밟은 노드가 순서대로 켜집니다.
+        <b>같은 코드가 질문에 따라 다른 길을 갑니다.</b>
+      </p>
+
+      <!-- 그래프 그림 — agent.js의 구조를 그대로 그린 것입니다 -->
+      <div class="graph">
+        <span class="gnode" id="g-start">시작</span>
+        <span class="garrow">→</span>
+        <span class="gnode think" id="g-think">🧠 think<small>판단</small></span>
+        <span class="garrow" id="g-branch">⇄</span>
+        <span class="gnode action" id="g-action">⚙️ action<small>도구 실행</small></span>
+        <span class="garrow">→</span>
+        <span class="gnode" id="g-end">끝</span>
+      </div>
+      <p class="graph-note">
+        ⇄ 되돌아가는 화살표 = <b>반복</b>. 도구를 쓰고 나면 다시 판단하러 돌아옵니다.<br>
+        도구가 필요 없으면 think에서 곧장 끝으로 갑니다 = <b>갈림길(조건 분기)</b>.
+      </p>
+
+      <ol id="trace" class="trace"></ol>
+    </section>
+
+
+    <!-- ═══ ③ 대화 ══════════════════════════════════════════════ -->
+    <section class="panel chat-panel">
+      <h2>💬 대화 <span class="tag half">두뇌만 더미</span></h2>
+
+      <div id="messages" class="messages"></div>
+
+      <form id="chat-form" class="composer">
+        <textarea
+          id="input"
+          rows="2"
+          placeholder="예) B-2041 언제 들어와?   (Enter=보내기, Shift+Enter=줄바꿈)"></textarea>
+        <button id="send" type="submit">보내기</button>
+      </form>
+    </section>
 
   </main>
+</div>
 
-  <script src="script.js"></script>
+<!-- ⚠️ 순서가 중요합니다. 아래에서 위를 부르기 때문에 위가 먼저 읽혀야 합니다.
+     data.js  → 더미 사내 데이터 (재고표 · 사용자)
+     brain.js → 판단 (여기가 나중에 진짜 LLM이 들어갈 자리)
+     agent.js → 그래프 + 도구 + 화면이 부르는 Backend
+     script.js → 화면 동작 -->
+<script src="data.js"></script>
+<script src="brain.js"></script>
+<script src="agent.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>

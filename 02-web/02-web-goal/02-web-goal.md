@@ -136,7 +136,7 @@
 ## 6. 준비물
 
 - [ ] 2-1단계 결과물 중 **화면 세 개** — `index.html` · `style.css` · `script.js`
-      (없으면 이 폴더의 [`example/`](example/README.md)에서 가져다 써도 됩니다)
+      (없으면 [`01-web-basic/example/`](../01-web-basic/example/README.md)에서 가져다 써도 됩니다)
 - [ ] Python 3.10 이상 ← **여기서 파이썬이 처음 등장합니다**
 - [ ] 라이브러리 세 개: `fastapi`, `uvicorn`, `langgraph`
 
