@@ -50,7 +50,7 @@
 ## 4. 이 리포 클론(끌어오기) 실습 🎯
 
 1. `Ctrl + Shift + P` → **`Git: Clone`** 입력 → 엔터
-2. Martial Agent가 알려준 리포 주소 붙여넣기: `https://github.com/MartialAgent/agent-ok.git`
+2. Martial Agent가 알려준 리포 주소 붙여넣기: `https://github.com/MartialAgent/agent-04.git`
 3. 저장할 폴더 선택 → 완료되면 **Open** 클릭
 4. 이 README가 보이면 성공! 🎉
 
